@@ -11,6 +11,6 @@ namespace Wisdom.Functions.Request
         /// <summary>
         /// 被查询订单号加密（必填）
         /// </summary>
-        public string HouseInfo { get; set; }
+        public string orderNumber { get; set; }
     }
 }

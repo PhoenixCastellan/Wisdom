@@ -35,12 +35,16 @@ namespace Wisdom.Functions
 
         public HousePlaceOrderResponse GethousePlaceOrder(HousePlaceOrderRequest request)
         {
-            throw new NotImplementedException();
+            var result = Utils.HttpPost(GlobalInfo.GethousePlaceOrder(), RequestHelper.GetRequestString(request));
+
+            return JsonConvert.DeserializeObject<HousePlaceOrderResponse>(result);
         }
 
         public HouseInfoResponse GethouseInfo(HouseInfoRequest request)
         {
-            throw new NotImplementedException();
+            var result = Utils.HttpPost(GlobalInfo.GetHouseInfo(), RequestHelper.GetRequestString(request));
+
+            return JsonConvert.DeserializeObject<HouseInfoResponse>(result);
         }
 
         /// <summary>
@@ -74,6 +78,27 @@ namespace Wisdom.Functions
             var result = Utils.HttpPost(GlobalInfo.queryPersonalCar(), RequestHelper.GetRequestString(request));
 
             return JsonConvert.DeserializeObject<queryPersonalMarriageResponse>(result);
+        }
+
+        public PersonMobileVerifyResponse getPersonMobileVerify(PersonMobileVerifyRequest request)
+        {
+            var result = Utils.HttpPost(GlobalInfo.GetPersonMobileVerify(), RequestHelper.GetRequestString(request));
+
+            return JsonConvert.DeserializeObject<PersonMobileVerifyResponse>(result);
+        }
+
+        public BlackListByIdentityCardResponse GetBlackListByIdentityCard(BlackListByIdentityCardRequest request)
+        {
+            var result = Utils.HttpPost(GlobalInfo.GetBlackListByIdentityCard(), RequestHelper.GetRequestString(request));
+
+            return JsonConvert.DeserializeObject<BlackListByIdentityCardResponse>(result);
+        }
+
+        public PersonalfundInfoResponse QueryPersonalfundInfo(PersonalfundInfoRequest request)
+        {
+            var result = Utils.HttpPost(GlobalInfo.QueryPersonalfundInfo(), RequestHelper.GetRequestString(request));
+
+            return JsonConvert.DeserializeObject<PersonalfundInfoResponse>(result);
         }
     }
 }

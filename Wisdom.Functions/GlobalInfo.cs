@@ -113,5 +113,32 @@
         {
             return Host + "wescr_api/queryPersonalMarriage";
         }
+
+        /// <summary>
+        /// 查询人姓名、身份号、手机号进行手机号验证
+        /// </summary>
+        /// <returns></returns>
+        public static string GetPersonMobileVerify()
+        {
+            return Host + "wescr_api/person/getPersonMobileVerify";
+        }
+
+        /// <summary>
+        /// 通过姓名、身份证查询实现查询个人黑名单信息
+        /// </summary>
+        /// <returns></returns>
+        public static string GetBlackListByIdentityCard()
+        {
+            return Host + "wescr_api/blackList/getBlackListByIdentityCard";
+        }
+
+        /// <summary>
+        /// 通过姓名、身份证、手机号码查询实现查询个人公积金信息
+        /// </summary>
+        /// <returns></returns>
+        public static string QueryPersonalfundInfo()
+        {
+            return Host + "wescr_api/queryPersonalfundInfo";
+        }
     }
 }

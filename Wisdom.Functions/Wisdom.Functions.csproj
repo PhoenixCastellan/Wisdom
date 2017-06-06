@@ -45,24 +45,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataVerify.cs" />
+    <Compile Include="Request\BlackListByIdentityCardRequest.cs" />
     <Compile Include="Request\CheckPersonInfoRequest.cs" />
     <Compile Include="Request\HouseEvaluateInfoRequest.cs" />
     <Compile Include="Request\HouseInfoRequest.cs" />
     <Compile Include="Request\HousePlaceOrderRequest.cs" />
     <Compile Include="Request\LendingDataInfoRequest.cs" />
     <Compile Include="Request\LonApplicationDetialRequest.cs" />
+    <Compile Include="Request\PersonalfundInfoRequest.cs" />
     <Compile Include="Request\PersonBadInfoRequest.cs" />
+    <Compile Include="Request\PersonMobileVerifyRequest.cs" />
     <Compile Include="Request\queryPersonalCarRequest.cs" />
     <Compile Include="Request\queryPersonalMarriageRequest.cs" />
     <Compile Include="Request\Request.cs" />
     <Compile Include="Request\RequestHelper.cs" />
+    <Compile Include="Response\BlackListByIdentityCardResponse.cs" />
     <Compile Include="Response\CheckPersonInfo.cs" />
     <Compile Include="Response\HouseEvaluateInfoResponse.cs" />
     <Compile Include="Response\HouseInfoResponse.cs" />
     <Compile Include="Response\HousePlaceOrderResponse.cs" />
     <Compile Include="Response\LendingDataInfoResponse.cs" />
     <Compile Include="Response\LonApplicationDetialResponse.cs" />
+    <Compile Include="Response\PersonalfundInfoResponse.cs" />
     <Compile Include="Response\PersonBadInfoResponse.cs" />
+    <Compile Include="Response\PersonMobileVerifyResponse.cs" />
     <Compile Include="Response\queryPersonalCarResponse.cs" />
     <Compile Include="Response\queryPersonalMarriageResponse.cs" />
     <Compile Include="Response\Response.cs" />

@@ -18,7 +18,7 @@ namespace Wisdom.Functions.Response
         /// </summary>
         public string MESSAGE { get; set; }
 
-        public HouseInfoResult RESULT { get; set; }
+        public List<HouseInfoResult> RESULT { get; set; }
     }
 
     public class HouseInfoResult

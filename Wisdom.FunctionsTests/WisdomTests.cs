@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using Wisdom.Functions.Request;
+using Wisdom.Functions.Response;
 
 namespace Wisdom.Functions.Tests
 {
@@ -43,7 +45,7 @@ namespace Wisdom.Functions.Tests
             };
             var response = new Wisdom().GetCheckPersonInfo(request);
 
-            Assert.IsTrue(response.MESSAGE.Equals("成功"));
+            Assert.IsTrue(response.MESSAGE.Contains("成功"));
         }
 
         [TestMethod()]
@@ -61,13 +63,36 @@ namespace Wisdom.Functions.Tests
         [TestMethod()]
         public void GethousePlaceOrderTest()
         {
-            Assert.Fail();
+            var request = new HousePlaceOrderRequest()
+            {
+                address = "上海市嘉定区南翔镇南华路101弄南华小区45号402",
+                email = "836102291@qq.com"
+            };
+            var response = new Wisdom().GethousePlaceOrder(request);
+
+            Assert.IsTrue(response.MESSAGE.Contains("成功"));
         }
 
         [TestMethod()]
         public void GethouseInfoTest()
         {
-            Assert.Fail();
+            var request = new HouseInfoRequest()
+            {
+                orderNumber = "WEH2017060613532454a-99d"
+            };
+            var response = new Wisdom().GethouseInfo(request);
+
+
+            //var param = $"userId={HttpUtility.UrlEncode("123")}" +
+            //            $"&userPwd={HttpUtility.UrlEncode("6uzNhW3vsYq5HtKofhKDgA==")}" +
+            //            $"&OrderNumber={HttpUtility.UrlEncode("ddsIQk/gqZThITiTm6WgUiwy95M0/eiAYnzjClbbpnI=")}" +
+            //            $"&secretKey={HttpUtility.UrlEncode("p6Hhet5fKJjJ9+PZ0SvSQSGa/+ZkXpbdc3kfB/4yIwoBs+rd2qv/puwSfTyMxPWk3WAfenruWVG0NkHNsHpYIIn2zJogVie+rtSFq4+EfztSoKh6HS2oWTIM5Ggxv4LnWg6d/RoQNlFWLXSxMwJBNEnU0vjxLT67fuIB74VGOto=")}";
+
+            //var result = Utils.HttpPost(GlobalInfo.GetHouseInfo(), param);
+
+            //return JsonConvert.DeserializeObject<HouseInfoResponse>(result);
+
+            Assert.IsTrue(response.MESSAGE.Contains("成功"));
         }
 
         [TestMethod()]
@@ -86,7 +111,7 @@ namespace Wisdom.Functions.Tests
             };
             var response = new Wisdom().GetPersonBadInfo(request);
 
-            Assert.IsTrue(response.MESSAGE.Equals("成功"));
+            Assert.IsTrue(response.MESSAGE.Contains("成功"));
         }
 
         [TestMethod()]
@@ -108,13 +133,60 @@ namespace Wisdom.Functions.Tests
         {
             var request = new queryPersonalMarriageRequest()
             {
-                name="吕日辉",
+                name = "吕日辉",
                 card = "362322198811072433",
                 mobile = "13971170724"
             };
             var response = new Wisdom().queryPersonalMarriage(request);
 
-            Assert.IsTrue(response.MESSAGE.Equals("成功"));
+            Assert.IsTrue(response.MESSAGE.Contains("成功"));
+        }
+
+        [TestMethod()]
+        public void getPersonMobileVerifyTest()
+        {
+            var request = new PersonMobileVerifyRequest()
+            {
+                name = "张京军",
+                idcard = "320681197906061211",
+                mobile = "13661761004"
+            };
+            var request1 = new PersonMobileVerifyRequest()
+            {
+                name = "吕红芳",
+                idcard = "362322198907242468",
+                mobile = "15946809593"
+            };
+            var response = new Wisdom().getPersonMobileVerify(request1);
+
+            Assert.IsTrue(response.MESSAGE.Contains("成功"));
+        }
+
+        [TestMethod()]
+        public void GetBlackListByIdentityCardTest()
+        {
+            var request = new BlackListByIdentityCardRequest()
+            {
+                idNumber = "330325198208095130",
+                name = "彭纪孟"
+            };
+            var response = new Wisdom().GetBlackListByIdentityCard(request);
+
+            Assert.IsTrue(response.MESSAGE.Contains("成功"));
+        }
+
+        [TestMethod()]
+        public void QueryPersonalfundInfoTest()
+        {
+            var request = new PersonalfundInfoRequest()
+            {
+                name = "吕日辉",
+                card = "362322198811072433",
+                mobile = "18079339866"
+            };
+            var response = new Wisdom().QueryPersonalfundInfo(request);
+
+            Assert.IsTrue(response.MESSAGE.Contains("成功"));
         }
     }
 }

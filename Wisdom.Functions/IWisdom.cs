@@ -73,5 +73,24 @@ namespace Wisdom.Functions
         /// <param name="request"></param>
         /// <returns></returns>
         queryPersonalMarriageResponse queryPersonalMarriage(queryPersonalMarriageRequest request);
+
+        /// <summary>
+        /// 查询人姓名、身份号、手机号进行手机号验证
+        /// </summary>
+        /// <returns></returns>
+        PersonMobileVerifyResponse getPersonMobileVerify(PersonMobileVerifyRequest request);
+
+        /// <summary>
+        /// 通过姓名、身份证查询实现查询个人黑名单信息
+        /// </summary>
+        /// <returns></returns>
+        BlackListByIdentityCardResponse GetBlackListByIdentityCard(BlackListByIdentityCardRequest request);
+
+
+        /// <summary>
+        /// 通过姓名、身份证、手机号码查询实现查询个人公积金信息
+        /// </summary>
+        /// <returns></returns>
+        PersonalfundInfoResponse QueryPersonalfundInfo(PersonalfundInfoRequest request);
     }
 }

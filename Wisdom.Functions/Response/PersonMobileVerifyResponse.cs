@@ -6,37 +6,38 @@ using System.Threading.Tasks;
 
 namespace Wisdom.Functions.Response
 {
-    public class HousePlaceOrderResponse
+    public class PersonMobileVerifyResponse
     {
         /// <summary>
-        /// 返回结果的状态码
+        /// 调用结果代码
         /// </summary>
         public string CODE { get; set; }
 
         /// <summary>
-        /// 返回结果的描述
+        /// 调用描述信息
         /// </summary>
         public string MESSAGE { get; set; }
 
         /// <summary>
         /// 返回结果
         /// </summary>
-        public List<HousePlaceOrderResult> result { get; set; }
-
+        public PersonMobileVerifyData data { get; set; }
 
     }
 
-    public class HousePlaceOrderResult
+    public class PersonMobileVerifyData
     {
         /// <summary>
-        /// 地址信息
+        /// T   验证信息通过
+        /// F 验证信息不一致
+        /// N 系统无记录
         /// </summary>
-        public string address { get; set; }
+        public string result { get; set; }
 
         /// <summary>
-        /// 订单号
+        /// 结果说明
         /// </summary>
-        public string orderNumber { get; set; }
+        public string MESSAGE { get; set; }
 
     }
 }
